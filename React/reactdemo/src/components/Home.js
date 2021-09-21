@@ -38,8 +38,29 @@ class Home extends Component{
 }
 
 
-run(){
-    alert('我是一个run方法')
+run = (event) =>{
+    // alert('我是一个run方法')
+    alert(event.target);        /* 获取执行时间的DOM节点*/
+    
+    event.target.style.background = 'red'; 
+
+    //获取dom的属性
+    alert(event.target.getAttribute('aid'))
+}
+
+inputChange = (e) =>{
+
+    //获取表单的值
+    console.log(e.target.value);
+
+    this.setState({
+        username: e.target.value
+    })
+
+}
+
+getInput = () => {
+    alert(this.state.username);
 }
 
 
@@ -82,6 +103,24 @@ setName =(str) =>{
         
         return (
         <div>
+
+            <h2>表单事件</h2>
+
+            {/* 获取表单的值
+            1. 监听表单的改变事件   onChange
+            2. 在改变的事件里面获取表单输入的值     事件对象
+            3. 把表单输入的值赋值给username     this.setState({})
+            4. 点击按钮的时候获取state里面的    this.state.username
+                
+            */}
+            <input onChange = {this.inputChange}/><button onClick = {this.getInput}>获取input的值</button>
+
+            <br/>
+
+
+            <button aid = "123" onClick = {this.run}>事件对象</button>
+
+            <br/>
 
             <button onClick = {this.run}>执行方法</button>
 
