@@ -4,11 +4,16 @@ import React, {Component} from 'react';
 
 
 //引入Home组件
-import Home from './components/Home';
+// import Home from './components/Home';
 
 //引入News组件
-import News from './components/News';
+// import News from './components/News';
 
+//引入List组件
+import List from './components/List';
+
+//引入Todolist组件
+import Todolist from './components/Todolist';
 
 class App extends Component {
 
@@ -19,9 +24,15 @@ class App extends Component {
     <div className="App">
       你好react 根组件
 
-      <Home/>
+      {/* <Home/>
 
-      <News/>
+      <News/> */}
+
+      <List/>
+
+      <br/>
+
+      <Todolist/>
     </div>
   );
  }
