@@ -22,17 +22,59 @@ class Home extends Component{
         name: '张三',
         age: '30',
         msg: '我是一个home组件',
+        message: '我是一个message',
         title: '我是一个title',
         color: 'red',
         style: {
             color:'red',
             fontsize: '40px'
         },
-
-        userinfo:{
             username: 'ITlearning'
-        }
+        
     }
+
+//第二种改变this指向的方法
+    this.getMessage = this.getMessage.bind(this);
+}
+
+
+run(){
+    alert('我是一个run方法')
+}
+
+
+getData(){
+    alert(this.state.msg);
+}
+
+getMessage(){
+    alert(this.state.message);
+}
+
+
+getName = () =>{
+    alert(this.state.username)
+}
+
+
+//第三种改变this指向的方法
+setData =() =>{
+
+    //改变state的值
+    this.setState({
+        msg: '我是一个home组件改变后的值'
+    })
+
+}
+
+
+setName =(str) =>{
+
+    //改变state的值
+    this.setState({
+        username: str
+
+})
 }
 
 
@@ -40,12 +82,39 @@ class Home extends Component{
         
         return (
         <div>
+
+            <button onClick = {this.run}>执行方法</button>
+
+            <br/>
+
+            <button onClick = {this.getData.bind(this)}>获取数据---第一种改变this指向的方法</button>
+
+            <br/>
+
+            <button onClick = {this.getMessage}>获取数据---第二种改变this指向的方法</button>
+
+            <br/>
+
+            <button onClick = {this.getName}>获取数据---第三种改变this指向的方法</button>
+
+            <br/>
+
+            <button onClick = {this.setData}>改变state里面的值</button>
+
+            <br/>
+
+            <button onClick = {this.setName.bind(this, '张三')}>执行方法传值</button>
+
+
+
+
+
             <h2>React组件里面的所有节点要被根节点包含</h2>
             <p>姓名: {this.state.name}</p>
 
             <p>年龄: {this.state.age}</p>
 
-            <p>对象：{this.state.userinfo.username}</p>
+            <p>对象：{this.state.username}</p>
 
             <p>消息：{this.state.msg}</p>
             
