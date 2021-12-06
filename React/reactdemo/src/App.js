@@ -15,6 +15,8 @@ import List from './components/List';
 //引入Todolist组件
 import Todolist from './components/Todolist';
 
+import ReachForm from './components/ReactForm';
+
 class App extends Component {
 
   
@@ -23,6 +25,7 @@ class App extends Component {
   return (
     <div className="App">
       你好react 根组件
+      react组件里面的所有节点要被根节点包含起来
 
       {/* <Home/>
 
@@ -33,6 +36,10 @@ class App extends Component {
       <br/>
 
       <Todolist/>
+
+      <br/>
+
+      <ReachForm />
     </div>
   );
  }
