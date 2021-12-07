@@ -16,6 +16,7 @@ import List from './components/List';
 import Todolist from './components/Todolist';
 
 import ReachForm from './components/ReactForm';
+import TodoListLearning from './components/TodoListLearning';
 
 class App extends Component {
 
@@ -40,6 +41,8 @@ class App extends Component {
       <br/>
 
       <ReachForm />
+
+      <TodoListLearning />
     </div>
   );
  }
