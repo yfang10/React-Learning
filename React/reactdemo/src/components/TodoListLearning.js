@@ -107,6 +107,17 @@ class TodoListLearning extends Component {
         localStorage.setItem("toDoList", JSON.stringify(tempList3))
     }
 
+    componentDidMount(){
+        //获取缓存的数据
+        var toDoList = JSON.parse(localStorage.getItem("toDoList"))
+
+        if(toDoList){
+            this.setState({
+                list: toDoList
+            })
+        }
+    }
+
    
     render() {
         return (
