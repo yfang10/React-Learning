@@ -51,7 +51,7 @@ class News extends Component {
 
           1、调用子组件的时候指定ref的值 <Header ref='header'></Header>      
           
-          2、通过this.refs.header  获取整个子组件实例  (dom（组件）加载完成以后获取 )
+          2、父组件通过this.refs.header  获取整个子组件实例  (dom（组件）加载完成以后获取 )
       */
 
       //alert(this.refs.footer.state.msg); //获取子组件的数据
