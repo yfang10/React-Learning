@@ -53,7 +53,7 @@ Header.defaultProps={
     title:'标题'
 }
 
-//同行propTypes定义父组件给子组件传值的类型
+//通过propTypes定义父组件给子组件传值的类型
 
 Header.propTypes={
 
