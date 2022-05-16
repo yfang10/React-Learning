@@ -1,5 +1,7 @@
 import React, { Component } from  'react';
 
+import storage from '../model/storage';
+
 class TodoListLearning extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +61,8 @@ class TodoListLearning extends Component {
     
     
                   //执行缓存数据
-            localStorage.setItem("toDoList", JSON.stringify(temp))
+            // localStorage.setItem("toDoList", JSON.stringify(temp))
+            storage.set("toDoList", temp )
             }
         }
 
@@ -75,7 +78,8 @@ class TodoListLearning extends Component {
 
     
                   //执行缓存数据
-                  localStorage.setItem("toDoList", JSON.stringify(tempList))
+                //   localStorage.setItem("toDoList", JSON.stringify(tempList))
+                storage.set("toDoList", tempList )
 }
 
 
@@ -90,7 +94,8 @@ class TodoListLearning extends Component {
             list2: tempList2
         })
 
-        localStorage.setItem("toDoList", JSON.stringify(tempList2))
+        // localStorage.setItem("toDoList", JSON.stringify(tempList2))
+        storage.set("toDoList", tempList2 )
 
     }
 
@@ -104,12 +109,15 @@ class TodoListLearning extends Component {
             list: tempList3
         })
 
-        localStorage.setItem("toDoList", JSON.stringify(tempList3))
+        // localStorage.setItem("toDoList", JSON.stringify(tempList3))
+        storage.set("toDoList", tempList3 )
     }
 
     componentDidMount(){
         //获取缓存的数据
-        var toDoList = JSON.parse(localStorage.getItem("toDoList"))
+        // var toDoList = JSON.parse(localStorage.getItem("toDoList"))
+
+        var toDoList = storage.get("toDoList")
 
         if(toDoList){
             this.setState({
