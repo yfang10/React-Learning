@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Header extends Component{
 
     constructor(props){
-            super(props);   //国定写法
+            super(props);   //固定写法
 
             this.state={
 
