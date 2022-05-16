@@ -65,7 +65,9 @@ class News extends Component {
         <div>        
           
 
-            <Header title={this.state.title}  run={this.run}  news={this} />
+            <Header title={this.state.title}  run={this.run}  
+            news={this} //将整个组件传给头部组件
+            />
           <br />
 
           <hr />
