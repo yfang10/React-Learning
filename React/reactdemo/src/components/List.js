@@ -32,7 +32,7 @@ class List extends Component {
     inputkeyUp = (e) => {
         console.log(e.keyCode);
         
-        if(e.keyCode == 13){
+        if(e.keyCode === 13){
             alert(e.target.vaule)
         }
     }

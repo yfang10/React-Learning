@@ -35,20 +35,33 @@ class TodoListLearning extends Component {
             ]
          };
     }
-
-    addData = () => {
-        // alert(this.refs.title.value)
        
-            var tempList = this.state.list
-            tempList.push(this.refs.title.value);       //  返回值是一个索引
 
-            this.refs.state.value = "";         //input的值变为空
-
-            this.setState({
-                list: tempList
-            })
+        addData = (e) => {
+             // alert(this.refs.title.value)
+            if(e.keyCode === 13){
+                let title = this.refs.title.value
     
-    }
+                let temp = this.state.list2;
+    
+                temp.push({
+                    title: title,
+                    checked: false
+                })
+    
+                //改变后的值赋值给list2
+                this.setState({
+                    list2: temp
+                })
+    
+                //表单置为空
+                this.refs.title.value = ""
+    
+    
+                  //执行缓存数据
+            localStorage.setItem("toDoList", JSON.stringify(temp))
+            }
+        }
 
 
    removeData = (key) => {
@@ -59,29 +72,14 @@ class TodoListLearning extends Component {
     this.setState({
         list: tempList
     })
+
+    
+                  //执行缓存数据
+                  localStorage.setItem("toDoList", JSON.stringify(tempList))
 }
 
 
-    addList = (e) => {
-        if(e.keyCode === 13){
-            let title = this.refs.title.value
-
-            let temp = this.state.list2;
-
-            temp.push({
-                title: title,
-                checked: false
-            })
-
-            //改变后的值赋值给list2
-            this.setState({
-                list2: temp
-            })
-
-            //表单置为空
-            this.refs.title.value = ""
-        }
-    }
+   
 
     checkboxChange = (key, val) => {
         let tempList2 = this.state.list2
@@ -91,6 +89,8 @@ class TodoListLearning extends Component {
         this.setState({
             list2: tempList2
         })
+
+        localStorage.setItem("toDoList", JSON.stringify(tempList2))
 
     }
 
@@ -103,17 +103,15 @@ class TodoListLearning extends Component {
         this.setState({
             list: tempList3
         })
+
+        localStorage.setItem("toDoList", JSON.stringify(tempList3))
     }
 
    
     render() {
         return (
             <div>
-                <h2>React todolist展示</h2>
-
-                <input ref = "title" />
-                --<button onClick = {this.addData}>增加</button>
-
+                 <header className="title">TodoList: 　<input ref="title" onKeyUp={this.addData} /> </header>
                  {/* <ul>
                     用到this要注意this指向
                         {
@@ -128,7 +126,7 @@ class TodoListLearning extends Component {
                       */}
                  
 
-                <header className = 'title'>TodoList:<input ref = "title" onKeyUp={this.addList} /></header>
+                
                 <h3>待办事项</h3>
 
                 <ul>
@@ -137,7 +135,7 @@ class TodoListLearning extends Component {
                     if(!value.checked){
                         return(
 
-                            <li>
+                            <li key = {key}>
                             <input type='checkbox' checked={ value.checked } onChange={this.checkboxChange.bind(this, key)} />
                             
                             {value.title}
@@ -162,7 +160,7 @@ class TodoListLearning extends Component {
                     if(value.checked){
                         return(
 
-                            <li>
+                            <li key ={key}>
                             <input type='checkbox' checked={ value.checked } onChange={this.checkboxChange.bind(this, key)} />
                             
                             {value.title}
