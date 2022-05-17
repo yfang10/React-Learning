@@ -28,6 +28,11 @@ class FetchJsonp extends Component {
         console.log("parsing failed", ex);
       });
   };
+
+  componentDidMount() {
+    this.getData();
+  }
+
   render() {
     return (
       <div>
