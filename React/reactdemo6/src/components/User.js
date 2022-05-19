@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Button } from "antd";
+
+import { PicRightOutlined } from "@ant-design/icons";
 // import Info from "./User/Info";
 // import Main from "./User/Main";
 
@@ -62,6 +65,16 @@ class User extends Component {
               {/* <Route exact path="/user/" component={UserList} />
 
               <Route path="/user/add" component={UserAdd} /> */}
+
+              <Button>antd中的按钮</Button>
+
+              <br />
+
+              <br />
+              <br />
+              <br />
+
+              <PicRightOutlined />
             </div>
           </div>
         </div>
