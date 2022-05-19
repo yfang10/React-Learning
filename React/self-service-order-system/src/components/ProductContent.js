@@ -45,10 +45,16 @@ class Content extends Component {
 
         <div className="p_content">
           <div className="p_info">
-            <img
-              src={`${this.state.domain}${this.state.list.img_url}`}
-              alt=""
-            />
+            {this.state.list.img_url ? (
+              <img
+                src={`${this.state.domain}${this.state.list.img_url}`}
+                alt=""
+              />
+            ) : (
+              ""
+            )}
+            {/* 第一次渲染页面的时候没有请求列表, 不存在img_url, 所以对img进行一个判断 */}
+
             <h2>{this.state.list.title}</h2>
             <p className="price">{this.state.list.price}/份</p>
           </div>

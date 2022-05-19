@@ -33,6 +33,9 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
+        <button>
+          <Link to="/login">跳转到登陆页面</Link>
+        </button>
         <div className="list">
           {/* 列表二维数组循环 */}
           {this.state.list.map((value, key) => {
