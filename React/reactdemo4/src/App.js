@@ -5,6 +5,8 @@ import "./assets/css/index.css";
 import Home from "./components/Home";
 import News from "./components/News";
 import Product from "./components/Product";
+import Content from "./components/Content";
+import ProductContent from "./components/ProductContent";
 
 class App extends Component {
   render() {
@@ -23,7 +25,9 @@ class App extends Component {
 
           <Route exact path="/" component={Home} />
           <Route exact path="/news" component={News} />
+          <Route exact path="/content/:aid" component={Content} />
           <Route exact path="/product" component={Product} />
+          <Route exact path="/productcontent" component={ProductContent} />
         </div>
       </Router>
     );
