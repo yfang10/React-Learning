@@ -24,10 +24,10 @@ class App extends Component {
           <br />
 
           <Route exact path="/" component={Home} />
-          <Route exact path="/news" component={News} />
-          <Route exact path="/content/:aid" component={Content} />
-          <Route exact path="/product" component={Product} />
-          <Route exact path="/productcontent" component={ProductContent} />
+          <Route path="/news" component={News} />
+          <Route path="/content/:aid" component={Content} />
+          <Route path="/product" component={Product} />
+          <Route path="/productcontent" component={ProductContent} />
         </div>
       </Router>
     );
