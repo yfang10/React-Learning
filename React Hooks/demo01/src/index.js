@@ -5,13 +5,14 @@ import ReactDOM from "react-dom/client";
 
 // import Example3 from "./Example3";
 
-import Example4 from "./Example4";
+// import Example4 from "./Example4";
 
+import Example5 from "./Example5";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Example /> */}
-    {/* <Example2 />
+    {/* <Example />
+    <Example2 />
 
     <br />
 
@@ -19,7 +20,9 @@ root.render(
 
     <Example3 /> */}
 
-    <Example4 />
+    {/* <Example4 /> */}
+
+    <Example5 />
   </React.StrictMode>
 );
 
