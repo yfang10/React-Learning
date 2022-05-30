@@ -7,7 +7,9 @@ import ReactDOM from "react-dom/client";
 
 // import Example4 from "./Example4";
 
-import Example5 from "./Example5";
+// import Example5 from "./Example5";
+
+import Example6 from "./example6/example6";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -22,7 +24,9 @@ root.render(
 
     {/* <Example4 /> */}
 
-    <Example5 />
+    {/* <Example5 /> */}
+
+    <Example6 />
   </React.StrictMode>
 );
 
