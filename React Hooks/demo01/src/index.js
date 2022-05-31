@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 // import Example from "./Example";
 // import Example2 from "./Example2";
 
@@ -9,7 +10,13 @@ import ReactDOM from "react-dom/client";
 
 // import Example5 from "./Example5";
 
-import Example6 from "./example6/example6";
+// import Example6 from "./example6/example6";
+
+// import Example7 from "./Example7";
+
+// import Example8 from "./Example8";
+
+import Example9 from "./Example9";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -26,7 +33,13 @@ root.render(
 
     {/* <Example5 /> */}
 
-    <Example6 />
+    {/* <Example6 /> */}
+    {/* 
+    <Example7 /> */}
+
+    {/* <Example8 /> */}
+
+    <Example9 />
   </React.StrictMode>
 );
 
